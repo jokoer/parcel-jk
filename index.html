@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="jordan koerner is a web developer, technical project manager, and experienced sales & marketing professional in southern california - los angeles, san diego, and orange county."
+    />
+    <link rel="stylesheet" href="src/index.css" />
+    <title>jordank.co</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "disambiguatingDescription": "Web developer and technical project manager in Los Angeles, Orange County, San Diego California.",
+        "email": "mailto:jordankoerner@gmail.com",
+        "jobTitle": "Web Developer",
+        "name": "Jordan Koerner",
+        "telephone": "(858) 880-7447",
+        "url": "http://www.jordank.co"
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      /* Add "https://api.ipify.org?format=json" statement
+                       this will communicate with the ipify servers in
+                       order to retrieve the IP address $.getJSON will
+                       load JSON-encoded data from the server using a
+                       GET HTTP request */
+
+      $.getJSON("https://api.ipify.org?format=json", function (data) {
+        // Setting text of element P with id gfg
+        $("#gfg").html(data.ip);
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <p
+        class="homepage"
+        id="_date"
+        style="top: 0; right: 3px; text-transform: lowercase;"
+      ></p>
+    </header>
+    <main>
+      <div>
+        <table
+          style="
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            padding: 5vh auto;
+          "
+        >
+          <th class="xx">thx 4 data</th>
+          <tr id="1" class="xx"></tr>
+          <tr id="2" class="xx"></tr>
+          <tr id="3" class="xx"></tr>
+          <tr id="4" class="xx"></tr>
+          <tr id="5" class="xx"></tr>
+          <tr id="5a" class="xx"></tr>
+
+          <tr id="6" class="xx"></tr>
+          <tr id="7" class="xx"></tr>
+          <tr id="8" class="xx"></tr>
+          <tr id="9" class="xx"></tr>
+          <tr class="xx" id="gfg"></tr>
+        </table>
+
+        <p id="xmas"></p>
+      </div>
+      `;
+    </main>
+
+    <footer>
+      <p
+        class="homepage"
+        style="text-align: left; bottom: 3px; left: 3px; position: absolute;"
+      >
+        web property of<br />
+        jordan koerner <br />california, usa
+      </p>
+    </footer>
+  </body>
+
+  <script>
+    document.getElementById("1").innerHTML =
+      "Cookies: " + navigator.cookieEnabled;
+    document.getElementById("2").innerHTML =
+      "Browser Language: " + navigator.browserLanguage;
+    document.getElementById("3").innerHTML = "Language: " + navigator.language;
+    document.getElementById("4").innerHTML = "Platform: " + navigator.platform;
+    document.getElementById("5").innerHTML =
+      "Connection Speed: " + navigator.connectionSpeed;
+    document.getElementById("5a").innerHTML =
+      "Connection: " + navigator.connection;
+
+    document.getElementById("6").innerHTML =
+      "User Agent: " + navigator.userAgent;
+    document.getElementById("7").innerHTML =
+      "Webdriver: " + navigator.webDriver;
+    document.getElementById("8").innerHTML =
+      "Geolocation: " + navigator.geolocation;
+    document.getElementById("9").innerHTML = "Referrer: " + document.referer;
+  </script>
+  <script>
+    console.log("Cookies: " + navigator.cookieEnabled);
+    console.log("Browser Language: " + navigator.browserLanguage);
+    console.log("Language: " + navigator.language);
+    console.log("Platform: " + navigator.platform);
+    console.log("Connection Speed: " + navigator.connectionSpeed);
+    console.log("User Agent: " + navigator.userAgent);
+    console.log("Webdriver: " + navigator.webdriver);
+    console.log("Geolocation: " + navigator.geolocation);
+    console.log("Referrer: " + document.referrer);
+    fetch("https://ipapi.co/json/")
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+      });
+  </script>
+  <script>
+    var d = new Date();
+    var month = d.getMonth() + 1;
+    var dia = d.getDay();
+    var day = d.getDate();
+    var year = d.getFullYear();
+    var date = dia + ", " + day + " of " + month + ", " + year;
+    document.getElementById("current_date").innerHTML =
+      date + " california, usa";
+  </script>
+  <script>
+    const currentDate = new Date();
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    };
+    document.getElementById("_date").innerHTML = currentDate.toLocaleDateString(
+      "en-us",
+      options
+    );
+  </script>
+
+  <script type="text/javascript">
+    var date1 = new Date();
+    var date2 = new Date("12/25/2022");
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    var Xdays = Math.round(Difference_In_Days);
+    document.getElementById("xmas").innerHTML = "days until xmas: " + Xdays;
+  </script>
+</html>
